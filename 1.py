@@ -66,3 +66,18 @@ if __name__ == '__main__':
 # def hello_world():
 #    return ‘hello world’
 # app.add_url_rule(‘/’, ‘hello’, hello_world)
+
+
+#You can also add variables in your web app, well you might be thinking about how it’ll help you,
+#it’ll help you to build a URL dynamically
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/hello/<name>')
+def hello_name(name):
+return 'Hello %s!' % name
+
+if __name__ == '__main__':
+app.run()
+#And go to the URL http://127.0.0.1:5000/hello/geeksforgeeks 
+#the following output hello geeksforgeeks
